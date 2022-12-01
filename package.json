@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mongoose": "^6.7.5",
+    "rest-hapi": "^3.0.1"
+  }
+}
