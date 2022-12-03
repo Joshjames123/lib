@@ -33,15 +33,15 @@ module.exports = function (mongoose) {
   Schema.statics = {
     collectionName: modelName,
     routeOptions: {
-      associations: {
-        projects: {
-          type: "MANY_MANY",
-          alias: "project",
-          model: "project",
-          linkingModel: "project_project",
-          embedAssociation: false,
-        },
-      },
+      // associations: {
+      //   projects: {
+      //     type: "MANY_MANY",
+      //     alias: "project",
+      //     model: "project",
+      //     linkingModel: "project_project",
+      //     embedAssociation: false,
+      //   },
+      // },
     },
   };
 
