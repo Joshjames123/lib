@@ -35,7 +35,7 @@ module.exports = function (mongoose) {
     routeOptions: {
       // associations: {
       //   projects: {
-      //     type: "MANY_MANY",
+      //     type: "ONE_MANY",
       //     alias: "project",
       //     model: "project",
       //     linkingModel: "project_project",
