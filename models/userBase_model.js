@@ -32,10 +32,6 @@ module.exports = function (mongoose) {
         type: Types.String,
         required: true,
       },
-      isClient: {
-        type: Types.Boolean,
-        required: true,
-      },
     },
     { collection: modelName }
   );
