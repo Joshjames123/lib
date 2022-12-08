@@ -32,6 +32,11 @@ module.exports = function (mongoose) {
         type: Types.String,
         required: true,
       },
+      userRoll: {
+        type: Types.String,
+        required: true,
+        enum: ["Applicant", "Client", "Admin"],
+      },
     },
     { collection: modelName }
   );
