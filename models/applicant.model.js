@@ -3,7 +3,7 @@ module.exports = function (mongoose) {
   let Types = mongoose.Schema.Types;
   let Schema = new mongoose.Schema({
     resume_file: {
-      type: Types.String,
+      type: Types.Buffer,
       required: true,
     },
   });

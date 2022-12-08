@@ -1,6 +1,6 @@
 let bcrypt = require("bcrypt");
 module.exports = function (mongoose) {
-  let modelName = "user";
+  let modelName = "user_base";
   let Types = mongoose.Schema.Types;
   let Schema = new mongoose.Schema(
     {
@@ -47,7 +47,7 @@ module.exports = function (mongoose) {
       create: {
         pre: function (payload, request, Log) {
           let hashedPassword = mongoose
-            .model("user")
+            .model("user_base")
             .generatePasswordHash(payload.password);
           payload.password = hashedPassword;
           return payload;
