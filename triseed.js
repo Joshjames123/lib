@@ -1,11 +1,11 @@
-let projectSchema = require("project.model.js");
-let userBaseSchema = require("userBase.model.js");
+let projectSchema = require("./models/project.model");
+let userBaseSchema = require("./models/userBase_model");
 let Hapi = require("@hapi/hapi");
 let mongoose = require("mongoose");
 let RestHapi = require("rest-hapi");
 
 // Sample Library
-module.exports = class Triseed {
+class Triseed {
   app;
   title = "Triseed API";
 
@@ -19,7 +19,9 @@ module.exports = class Triseed {
       plugin: RestHapi,
       options: {
         mongoose,
-        appTitle: this.title,
+        config: {
+          appTitle: this.title,
+        },
       },
     });
 
@@ -32,12 +34,12 @@ module.exports = class Triseed {
   getUserBaseSchema() {
     return userBaseSchema;
   }
-};
+}
 
 // Usage
 const server = new Triseed();
 server.init();
 
-server.getProjectSchema();
+// server.getProjectSchema();
 
-server.userBaseSchema();
+// server.getUserBaseSchema();

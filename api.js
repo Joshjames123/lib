@@ -4,7 +4,7 @@ let RestHapi = require("rest-hapi");
 
 async function api() {
   try {
-    let server = Hapi.Server({ port: 8080 });
+    let server = Hapi.Server({ port: 8081 });
 
     let config = {
       appTitle: "Qualitimbre API",
