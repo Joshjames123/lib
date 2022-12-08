@@ -2,16 +2,9 @@ module.exports = function (mongoose) {
   let modelName = "user_client";
   let Types = mongoose.Schema.Types;
   let Schema = new mongoose.Schema({
-    email: {
+    companyModel: {
       type: Types.String,
       required: true,
-      unique: true,
-    },
-    password: {
-      type: Types.String,
-      required: true,
-      exclude: true,
-      allowOnUpdate: false,
     },
   });
 
