@@ -4,7 +4,6 @@ module.exports = function (mongoose) {
   let Schema = new mongoose.Schema({
     resume_file: {
       type: Types.Buffer,
-      required: true,
     },
   });
 

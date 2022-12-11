@@ -1,5 +1,5 @@
 let projectSchema = require("./models/project.model");
-let userBaseSchema = require("./models/userBase_model");
+let userBaseSchema = require("./models/userBase.model");
 let Hapi = require("@hapi/hapi");
 let mongoose = require("mongoose");
 let RestHapi = require("rest-hapi");

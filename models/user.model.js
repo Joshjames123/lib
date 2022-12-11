@@ -1,6 +1,6 @@
 let bcrypt = require("bcrypt");
 module.exports = function (mongoose) {
-  let modelName = "user_base";
+  let modelName = "user";
   let Types = mongoose.Schema.Types;
   let Schema = new mongoose.Schema(
     {
@@ -32,10 +32,25 @@ module.exports = function (mongoose) {
         type: Types.String,
         required: true,
       },
-      userRoll: {
+      userType: {
         type: Types.String,
         required: true,
         enum: ["Applicant", "Client", "Admin"],
+      },
+      companyName: {
+        type: Types.String,
+      },
+      companyDescription: {
+        type: Types.String,
+      },
+      companyAddress: {
+        type: Types.String,
+      },
+      companyPhoneNumber: {
+        type: Types.Number,
+      },
+      resume_file: {
+        type: Types.Buffer,
       },
     },
     { collection: modelName }
@@ -47,7 +62,7 @@ module.exports = function (mongoose) {
       create: {
         pre: function (payload, request, Log) {
           let hashedPassword = mongoose
-            .model("user_base")
+            .model("user")
             .generatePasswordHash(payload.password);
           payload.password = hashedPassword;
           return payload;
